@@ -11,7 +11,7 @@ class News(models.Model):
 	photo=models.ImageField(upload_to='img/%Y/%m/%d/',verbose_name='rasm',blank=True)
 	is_published=models.BooleanField(default=True,verbose_name='Publikabad')
 	###--- models.PROTECT
-	category=models.ForeignKey('Category', on_delete = models.PROTECT, null=True,verbose_name="Kategoriya nomi")
+	category=models.ForeignKey('Category', on_delete = models.PROTECT, verbose_name="Kategoriya nomi")
 
 
 	def get_absolute_url(self):

@@ -56,12 +56,13 @@ def add_news(request):
 		form =NewsForm(request.POST)
 		####---is_valid() metod bazaga ulanganlik tekshiriladi
 		if form.is_valid():
-			# print(form.cleaned_data)
-			title=form.cleaned_data['title']
-			content=form.cleaned_data['content']
-			is_published=form.cleaned_data['is_published']
-			category=form.cleaned_data['category']
-			obj= News.objects.create(title=title,content=content,is_published=is_published,category=category)
+			# # print(form.cleaned_data)
+			# title=form.cleaned_data['title']
+			# content=form.cleaned_data['content']
+			# is_published=form.cleaned_data['is_published']
+			# category=form.cleaned_data['category']
+			obj=form.save()
+			# obj= News.objects.create(title=title,content=content,is_published=is_published,category=category)
 			## --- redirect metod url korsatamiz
 			# return redirect('home') ##
 			return redirect(obj)
